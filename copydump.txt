@@ -1,0 +1,69 @@
+START OF: index.js (old)
+
+const electron = require("electron");
+console.log("Electron Ready");
+//const Menu = electron.Menu();
+//console.log("Electron Menu Ready");
+
+const { app, BrowserWindow, Menu } = require('electron')
+
+function createWindow () {
+  const ebWin = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+	  enableRemoteModule: true
+    }
+  })
+  
+  const menu = Menu.buildFromTemplate(mainMenu)
+  Menu.setApplicationMenu(menu)
+
+  ebWin.loadFile('src/index.html')
+}
+
+const mainMenu = [
+	{
+		label: "File",
+		submenu: [
+			{
+				label: "Exit",
+				click: function() {
+					app.quit()
+				}
+			},
+		],
+	},
+	{
+		label: "Edit",
+		submenu: [
+			{
+				label: "Inspect",
+				click: function() {
+					toggleDev();
+				}
+			}
+		],
+	}
+]
+
+function toggleDev() {
+    ebWin.webContents.toggleDevTools();
+}
+
+app.whenReady().then(createWindow)
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow()
+  }
+})
+
+END OF: index.js (old)

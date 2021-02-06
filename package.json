@@ -1,0 +1,18 @@
+{
+  "name": "electronbuilder",
+  "version": "1.0.0",
+  "description": "Electron Packager, simply packed into a single Electron app.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+	"debugStart": "electron --debug . "
+  },
+  "author": "Evan Viele",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^11.2.2"
+  },
+  "dependencies": {
+    "electron-packager": "^15.2.0"
+  }
+}
