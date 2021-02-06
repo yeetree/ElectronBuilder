@@ -1,74 +1,12 @@
-<html>  
-	<head>  
-		<title>Electron Builder</title>
-		<link rel="stylesheet" href="./css/main.css">
-		<script src="./js/builder.js"></script>
+<html>
+	<head>
+		<title>Electron Builder Console</title>
+		
 	</head>
 	<body>
-		<div class="topnav">
-		<a class="active" href="./index.html">Home</a>
-		<a href="./news.html">News</a>
-		<a href="./docs/index.html">Documentation/Getting Started</a>
-		<a href="./about.html">About</a>
-	</div>
-		<h1>Electron Builder</h1>
-		<h2>Where is your project located?</h2>
-		<p>Due to security reasons, JS will not allow selecting directory paths,<br />so please type out the path to your project.</p>
-		<p>Format: C:\Path\To\Electron\Project</p>
-		<input type="text" id="pathOfProject"/>
-		
-		<h2>What is the name of your project?</h2>
-		<p>What do you want to name your project? Project will be set to the project's name in "package.json" by default ;)</p>
-		<input type="text" id="nameOfProject"/>
-		
-		<h2>Where is your project's icon located?</h2>
-		<p>What icon do you want to be used for your project? Project will be set to the default icon by default ;)</p>
-		<input type="text" id="iconPathOfProject"/>
-		
-		<h2>What is the name of the executable file?</h2>
-		<p>What do you want to name your project's executable? Project will be set to the project's name in "package.json" by default ;)</p>
-		<input type="text" id="nameOfProjectExecutable"/>
-		
-		<h2>What platform do you want to build for?</h2>
-		<p>What platform do you want this program to run in?</p>
-		<label for="platform">Select Platform:</label>
-
-		<select name="platform" id="platform">
-			<option value="win32">Windows (win32)</option>
-			<option value="darwin">Mac OSX (darwin)</option>
-			<option value="mas">Mac App Store (mas)</option>
-			<option value="linux">Linux (linux)</option>
-		</select>
-		
-		<h2>What architecture do you want to build for?</h2>
-		<p>What cpu architecture do you want to build for?</p>
-		<label for="arch">Select Arch:</label>
-
-		<select name="arch" id="arch">
-			<option value="ia32">x86-32 (ia32)</option>
-			<option value="x64">x86-64 (x64)</option>
-			<option value="armv7l">Arm7 (armv7l)</option>
-			<option value="arm64">AArch64 (arm64)</option>
-			<option value="mips64el">MIPS 64 (mips64el)</option>
-		</select>
-		
-		<br />
-		<br />
-		<br />
-		
-		<button id="toADV" onclick="tADV()">Show Advanced Options</button>
-		<div id="advOpt">
-			<p>Put any additional flags here.</p>
-			<input id="advFlags"/>
+		<div id="consoleLog">
+			<p>Electron Builder Console 1.0.0</p>
 		</div>
-		
-		<script>
-			tADV();
-			defVar();
-		</script>
-		
-		<br />
-		
-		<button onclick="defVar(); genCMD()">Build</button>
+		<script src="./js/console.js"></script>
 	</body>
-</html>
+</html>	
